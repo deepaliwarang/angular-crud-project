@@ -1,0 +1,19 @@
+.card{
+    width: 50%;
+    top: 40px;
+    margin: auto;
+}
+.btn-gray{
+    background-color: rgb(133, 130, 130);
+    color: white;
+    margin: 3%;
+}
+.pointer{
+    cursor: pointer;
+}
+.form-group{
+    margin: 2%;
+}
+.error {
+    color: red;
+  }

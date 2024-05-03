@@ -1,0 +1,9 @@
+
+.img-Show {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  } 
+  /* .float{
+    margin-left: 1000px;
+  } */

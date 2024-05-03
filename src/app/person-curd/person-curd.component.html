@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-md-12 mb-30">
+
+        <div class="card ">
+            <h1 style="text-align: center;margin-top:10px">{{isCreate ? 'Add ' : 'Update'}} Person</h1>
+            <div class="card-body">
+                <div class="page-title">
+                    <div class="row mb-4 ">
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                </div>
+                <form [formGroup]="personForm">
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1"> Name</label>
+                                <input type="text" class="form-control" placeholder="Name" formControlName="name"
+                                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.required">First Name is required</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Email" formControlName="email"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required"> Email is required</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Joining Date </label>
+                                <input type="date" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" formControlName="doj"
+                                    [ngClass]="{ 'is-invalid': submitted && f.doj.errors }">
+                                <div *ngIf="submitted && f.doj.errors" class="invalid-feedback">
+                                    <div *ngIf="f.doj.errors.required"> Joining Date is required</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Department</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp"
+                                    placeholder="Department" formControlName="Department"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Department.errors }">
+                                <div *ngIf="submitted && f.Department.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Department.errors.required"> Department is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Position</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp"
+                                    placeholder="Position" formControlName="Position"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Position.errors }">
+                                <div *ngIf="submitted && f.Position.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Position.errors.required"> Position is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-success" (click)="savePerson()">{{isCreate ? 'Add ' :
+                        'Update'}} Person</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="reset" class="btn btn-gray">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

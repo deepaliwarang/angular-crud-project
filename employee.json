@@ -1,0 +1,27 @@
+{
+  "signUp": [
+    {
+      "id": "1",
+      "email": "deepali@gmail.com",
+      "password": "deepali@123"
+    }
+  ],
+  "employee": [
+    {
+      "id": "1",
+      "name": "deepali warang",
+      "email": "abc@gmail.com",
+      "doj": "2024-05-16",
+      "Department": "account",
+      "Position": "SAP"
+    },
+    {
+      "id": "2",
+      "name": "deepali",
+      "email": "deepali@gmail.com",
+      "doj": "2024-05-15",
+      "Department": "engineering",
+      "Position": "software"
+    }
+  ]
+}

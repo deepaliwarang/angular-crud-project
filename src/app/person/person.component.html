@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <div class="row">
+        <div class=" ml-20 float">
+
+        </div>
+        <div class="col-md-9 mt-2">
+            <form>
+                <div class="d-block d-sm-flex justify-content-between">
+                    <div class="d-block mb-3">
+                        <input type="search" class="form-control" style="height:45px;width: 250%;"
+                            [(ngModel)]="serachTexts" name="serachTexts" placeholder="Select name">
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 mt-2">
+            <a class="btn btn-primary" routerLink="/Person-Curd" routerLinkActive="active"
+                style="margin-bottom: 15px;">Add
+                New <i class="fa fa-plus-circle"></i> </a>
+
+        </div>
+        <div class="col-md-11">
+
+
+            <table class="table center-aligned-table mb-0 table-striped table-bordered row-border hover">
+
+                <thead>
+                    <tr class="text-dark">
+                        <th style="text-align: center;">Id</th>
+                        <th style="text-align: center;">Name</th>
+                        <th style="text-align: center;">Email</th>
+                        <th style="text-align: center;">Department</th>
+                        <th style="text-align: center;">Position</th>
+                        <th style="text-align: center;">Joining Date</th>
+                        <th style="text-align: center;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let employee of employeeData  | serachText:serachTexts; let i = index">
+                        <td style="text-align: center;">{{employee.id}}</td>
+                        <td style="text-align: center;">{{employee.name }}</td>
+                        <td style="text-align: center;">{{employee.email}}</td>
+                        <td style="text-align: center;">{{employee.Department}}</td>
+                        <td style="text-align: center;">{{employee.Position}}</td>
+                        <td style="text-align: center;">{{employee.doj }}</td>
+
+
+                        <td class="text-center"><a class="pr-2 mr-3" routerLink="/Person-Curd-Update/{{employee.id}}">
+                                <i class="fa fa-pencil fa-lg"></i></a> &nbsp;&nbsp;
+
+                            <a>
+                                <i class="fa fa-trash text-danger" aria-hidden="true"
+                                    (click)="deleteemployee(employee.id)"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
